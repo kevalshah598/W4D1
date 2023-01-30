@@ -29,9 +29,6 @@ class TicTacToeNode
         new_board = @board.dup
         if new_board[[row_idx, pos_idx]] == nil
           new_board[[row_idx, pos_idx]] = @next_mover_mark
-        end
-
-        if !new_board.over?
           children_arr << TicTacToeNode.new(new_board, next_mark, [row_idx, pos_idx])
         end
       end
@@ -50,6 +47,10 @@ class TicTacToeNode
     end
     output
   end
+
+  
+
+
 end
 
 
